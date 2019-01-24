@@ -37,7 +37,6 @@ export default {
 		}
 	},
 	created() {
-		console.log(data.user.nama)
 	if (data.user) {
 			this.user.username = data.user.username
 			this.user.password = data.user.password
