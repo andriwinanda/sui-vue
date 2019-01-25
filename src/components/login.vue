@@ -8,15 +8,15 @@
             <h3 text-align="right">Login</h3>
             <sui-form-field>
               <label>Username</label>
-              <input placeholder="Username" v-model="username">
+              <input placeholder="Username" v-model="username" autofocus>
             </sui-form-field>
             <sui-form-field>
               <label>Password</label>
               <input type="password" placeholder="Password" v-model="password">
             </sui-form-field>
-            <sui-form-field>
-              <sui-checkbox label="I agree to the Terms and Conditions" />
-            </sui-form-field>
+            
+            
+            
             
             <sui-button type="submit" primary>Login</sui-button>
         
@@ -36,8 +36,8 @@ import data from '../database.js'
 export default {
   data() {
 		return{
-			username: '',
-			password: '',
+			username: 'andriwinanda',
+			password: 'rahasia',
       setuju:'',
       message:''
 		}
