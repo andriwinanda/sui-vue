@@ -20,18 +20,21 @@
 									<label>Drop off</label>
 									<input type="text" placeholder="I'm going to..." v-model="password">
 								</sui-form-field>
-								<sui-form-field>
-									<sui-checkbox label="Reapeat Order" />
+
+								<!-- Repeat -->
+								<!-- <sui-form-field>
+									<sui-checkbox v-model="checked" label="Reapeat Order" />
 								</sui-form-field>
 								
-									<sui-form-fields inline>
+									<sui-form-fields inline v-if="checked">
 										<label>Reapeat order every</label>
 										<sui-form-field>
 											<sui-checkbox
 												label="Once a week"
 												radio
 												value="1"
-												v-model="value"
+												name="repeat"
+												v-model="repeat"
 											/>
 										</sui-form-field>
 										<sui-form-field>
@@ -39,7 +42,8 @@
 												label="2-3 times a week"
 												radio
 												value="2"
-												v-model="value"
+												name="repeat"
+												v-model="repeat"
 											/>
 										</sui-form-field>
 										<sui-form-field>
@@ -47,7 +51,8 @@
 												label="Once a day"
 												radio
 												value="3"
-												v-model="value"
+												name="repeat"
+												v-model="repeat"
 											/>
 										</sui-form-field>
 										<sui-form-field>
@@ -55,11 +60,35 @@
 												label="Twice a day"
 												radio
 												value="4"
+												name="repeat"
+												v-model="repeat"
+											/>
+										</sui-form-field>
+									</sui-form-fields> -->
+
+									<sui-form-fields inline>
+										<sui-form-field>
+											<label>Payment Method</label>
+											<sui-checkbox
+												radio
+												name="paymentMethod"
+												value="1"
+												v-model="value"
+											>BliPay {{user.balance}}</sui-checkbox>
+										</sui-form-field>
+										<sui-form-field>
+											<sui-checkbox
+												label="Cash"
+												radio
+												name="paymentMethod"
+												value="1"
 												v-model="value"
 											/>
 										</sui-form-field>
 									</sui-form-fields>
-								<sui-button type="submit" primary>Login</sui-button>
+
+								<sui-button type="submit" primary>Book Now</sui-button>
+								<sui-button secondary floated="right">Book Everyday</sui-button>
 						
 							</sui-form>
 						</sui-segment>
@@ -110,6 +139,8 @@ import data from '../database.js'
 export default {
 	data() {
 		return{
+			
+			checked: false,
 			user:{
 				username: '',
 				password: '',

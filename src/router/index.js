@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/components/login'
 import Home from '@/components/home'
 import Profile from '@/components/profile'
+import ListBook from '@/components/list-booking'
 
 Vue.use(Router)
 
@@ -33,6 +34,10 @@ export default new Router({
     {
       path: '/profile',
       component: Profile
+    },
+    {
+      path: '/list-booking',
+      component: ListBook
     }
   ]
 })
